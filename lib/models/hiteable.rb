@@ -2,8 +2,11 @@ module Hiteable
   include Bots
 
   def hiteable_by?(ua)
-    WILD_CARDS.each { |wc| return false if ua and ua.downcase.include? wc }
-    true unless LIST.include? ua
+    if ua
+      return false if WILD_CARDS.detect { |wc| ua.downcase.include? wc } or LIST.include? ua
+    end
+
+    true
   end
 
   def hit_view(ua, ip)
