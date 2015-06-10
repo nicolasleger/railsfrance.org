@@ -8,9 +8,9 @@ atom_feed language: 'fr' do |feed|
       entry.title item.title
       entry.content type: 'xhtml' do |html|
         html.p "Ville -- #{item.city}"
-	html.p "Lieu -- #{item.street}"
-	html.p "Date -- #{item.date.strftime("%d-%m-%Y à %H:%M")}"
-	html.p item.description
+      	html.p "Lieu -- #{item.street}"
+      	html.p "Date -- #{item.date.strftime("%d-%m-%Y à %H:%M")}"
+      	html.p item.description
       end
 
       entry.updated(item.updated_at.strftime("%Y-%m-%dT%H:%M:%SZ"))

@@ -11,7 +11,7 @@
     %div#secondaryNavContainer
       %ul
         %li
-          =link_to "RSS", question_url(@question, :atom), class: "navButton rss", target: "_blank"
+          = link_to "RSS", question_url(@question, :atom), class: "navButton rss", target: "_blank"
         %li
           = link_to "Retour aux questions", questions_path, class: "navButton back"
         - if can? :update, @question
